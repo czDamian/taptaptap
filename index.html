@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>TapTapTap</title>
+    <base target="_blank" />
+  </head>
+  <body>
+    <header class="flexRow shadow">
+      <div>
+        <a href="https://wa.me/2348060864466">TapTapTap</a>
+      </div>
+      <div>
+        <a href="https://wa.me/2348060864466" title="chat Damian on whatsapp"
+          >Contact us</a
+        >
+      </div>
+    </header>
+    <div class="flexRow">
+      <div>
+        <span>Your balance:</span> <span id="tapBalance" class="gold">0</span
+        ><span>🔥coins</span>
+      </div>
+      <div>
+        <span>Mining balance</span>
+        <span id="earnPerHour" class="gold">201</span><span>🔥coins</span>
+      </div>
+      <div>
+        <span>Tap per sec</span>
+        <span id="tapPerSec" class="gold"></span> <span>⏲ </span>
+      </div>
+    </div>
+    <div>
+      <button class="tap" id="noTap" onclick="tap()">start mining</button>
+    </div>
+
+    <div class="data">
+      <h1>Current level</h1>
+      <p id="level">1. Novice</p>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

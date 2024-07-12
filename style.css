@@ -1,0 +1,88 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: verdana;
+  background-color: #002327;
+  color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover, a:active{
+    color: gold;
+}
+/* custom styles */
+.tap {
+  border-radius: 1000px;
+  cursor: pointer;
+  margin: 50px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  text-transform: uppercase;
+  font: inherit;
+  width: 200px;
+  height: 200px;
+  color: #7c0202;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #FCDC73;
+  border: 1px solid #FCDC73;
+  box-shadow: 1px 1px 12px #FCDC73;
+}
+
+.tap:active {
+  background-color: #91720c;
+}
+
+.noTap {
+  border-radius: 1000px;
+  cursor: pointer;
+  margin: 50px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  text-transform: uppercase;
+  font: inherit;
+  color: white;
+  width: 200px;
+  height: 200px;
+  background-color: #9e0606;
+  border: 1px solid #9e0606;
+  box-shadow: 1px 1px 12px #9e0606;
+}
+.noTap:active {
+  background-color: #5c0303;
+}
+
+/* flexbox */
+.flexRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: row;
+}
+
+.gold {
+  color: gold;
+}
+
+.data{
+    margin: 10px 20px;
+}
+.shadow{
+    box-shadow: 1px 1px 8px ;
+    margin-bottom: 20px;
+}
