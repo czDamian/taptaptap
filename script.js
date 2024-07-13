@@ -12,23 +12,23 @@ function tap() {
   }
   if (earnPerHour > 0 || earnPerHour - tapPerSec >= 0) {
     if (balance >= 0 && balance < 20) {
-      level = "2. Beginner";
+      level = "Beginner";
       document.getElementById("level").innerHTML = level;
     } else if (balance >= 20 && balance < 80) {
       tapPerSec = 2;
       document.getElementById("tapPerSec").innerHTML = tapPerSec;
-      level = "3. Amateur";
+      level = "Amateur";
       document.getElementById("level").innerHTML = level;
     } else if (balance >= 80 && balance < 200) {
       tapPerSec = 3;
       document.getElementById("tapPerSec").innerHTML = tapPerSec;
       document.getElementById("tapPerSec").innerHTML = tapPerSec;
-      level = "4. Professional";
+      level = "Professional";
       document.getElementById("level").innerHTML = level;
     } else {
       tapPerSec = 5;
       document.getElementById("tapPerSec").innerHTML = tapPerSec;
-      level = "5. Grand Master";
+      level = "Master";
       document.getElementById("level").innerHTML = level;
     }
     earnPerHour = earnPerHour - tapPerSec;

@@ -18,27 +18,29 @@
         >
       </div>
     </header>
-    <div class="flexRow">
-      <div>
-        <span>Your balance:</span> <span id="tapBalance" class="gold">0</span
-        ><span>🔥coins</span>
-      </div>
-      <div>
-        <span>Mining balance</span>
-        <span id="earnPerHour" class="gold">201</span><span>🔥coins</span>
-      </div>
-      <div>
-        <span>Tap per sec</span>
-        <span id="tapPerSec" class="gold"></span> <span>⏲ </span>
+    <div class=" ">
+      <div class="center">
+        <div class="large">
+          <span id="tapBalance" class="gold">0</span>
+          <span>coins</span>
+        </div>
+        <p id="level" class="level">Novice</p>
       </div>
     </div>
     <div>
       <button class="tap" id="noTap" onclick="tap()">start mining</button>
-    </div>
-
-    <div class="data">
-      <h1>Current level</h1>
-      <p id="level">1. Novice</p>
+      <div class="flexRow">
+        <div>
+          <span id="earnPerHour" class="gold">200</span>
+          <span>/</span>
+          <span class="gold">200 </span>
+          <span>coins left</span>
+        </div>
+        <div>
+          <span>Tap per sec</span>
+          <span id="tapPerSec" class="gold"></span> <span>⏲</span>
+        </div>
+      </div>
     </div>
   </body>
   <script src="script.js"></script>

@@ -6,13 +6,17 @@ body {
   font-size: 14px;
   background-color: #002327;
   color: white;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
-a{
-    text-decoration: none;
-    color: white;
+a {
+  text-decoration: none;
+  color: white;
 }
-a:hover, a:active{
-    color: gold;
+a:hover,
+a:active {
+  color: gold;
 }
 /* custom styles */
 .tap {
@@ -28,12 +32,12 @@ a:hover, a:active{
   font: inherit;
   width: 100px;
   height: 100px;
-  color: #7c0202;
-  font-size: 18px;
+  color: #002327;
+  /* font-size: 18px; */
   font-weight: bold;
-  background-color: #FCDC73;
-  border: 1px solid #FCDC73;
-  box-shadow: 1px 1px 12px #FCDC73;
+  background-color: #fcdc73;
+  border: 1px solid #fcdc73;
+  box-shadow: 1px 1px 12px #fcdc73;
 }
 
 .tap:active {
@@ -80,24 +84,32 @@ a:hover, a:active{
   color: gold;
 }
 
-.data{
-    margin: 10px 20px;
+.shadow {
+  box-shadow: 1px 1px 8px;
+  margin-bottom: 20px;
 }
-.shadow{
-    box-shadow: 1px 1px 8px ;
-    margin-bottom: 20px;
+.center {
+  text-align: center;
+}
+.large {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.level {
+  opacity: 50%;
 }
 
 /* media screen for mobile responsiveness */
 
-@media screen and (min-width: 360px) {
-    .tap, .noTap {
-        height: 200px;
-        width: 200px;
-        font-size: 24px;
-    }
-    body{
-        font-size: 16px;
-    }
-    
+@media screen and (min-width: 500px) {
+  .tap,
+  .noTap {
+    height: 200px;
+    width: 200px;
+    font-size: 24px;
+  }
+  body {
+    font-size: 16px;
+  }
 }
