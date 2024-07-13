@@ -1,6 +1,6 @@
 const BEGINNER_THRESHOLD = 20;
 const AMATEUR_THRESHOLD = 80;
-const PROFESSIONAL_THRESHOLD = 200;
+const PROFESSIONAL_THRESHOLD = 250;
 const MASTER_TAP_PER_SEC = 5;
 
 const tapBalanceElem = document.getElementById("tapBalance");
