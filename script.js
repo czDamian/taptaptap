@@ -1,41 +1,71 @@
-let eBalance = document.getElementById("tapBalance").innerHTML;
-let balance = parseFloat(eBalance);
-let earnPerHour = document.getElementById("earnPerHour").innerHTML;
+const BEGINNER_THRESHOLD = 20;
+const AMATEUR_THRESHOLD = 80;
+const PROFESSIONAL_THRESHOLD = 200;
+const MASTER_TAP_PER_SEC = 5;
+
+const tapBalanceElem = document.getElementById("tapBalance");
+const earnPerHourElem = document.getElementById("earnPerHour");
+const tapPerSecElem = document.getElementById("tapPerSec");
+const levelElem = document.getElementById("level");
+const noTapElem = document.getElementById("noTap");
+const dailyClaimElem = document.getElementById("dailyC");
+
+// Initial values
+let balance = parseFloat(tapBalanceElem.innerHTML);
+let earnPerHour = parseFloat(earnPerHourElem.innerHTML);
 let tapPerSec = 1;
-document.getElementById("tapPerSec").innerHTML = tapPerSec;
+let level = levelElem.innerHTML;
+let dailyReward = dailyClaimElem.innerHTML;
 
-let level = document.getElementById("level").innerHTML;
+// Set initial tap per second value
+tapPerSecElem.innerHTML = tapPerSec;
 
-function tap() {
-  if (earnPerHour == 0) {
-    document.getElementById("noTap").className = "noTap";
-  }
-  if (earnPerHour > 0 || earnPerHour - tapPerSec >= 0) {
-    if (balance >= 0 && balance < 20) {
-      level = "Beginner";
-      document.getElementById("level").innerHTML = level;
-    } else if (balance >= 20 && balance < 80) {
-      tapPerSec = 2;
-      document.getElementById("tapPerSec").innerHTML = tapPerSec;
-      level = "Amateur";
-      document.getElementById("level").innerHTML = level;
-    } else if (balance >= 80 && balance < 200) {
-      tapPerSec = 3;
-      document.getElementById("tapPerSec").innerHTML = tapPerSec;
-      document.getElementById("tapPerSec").innerHTML = tapPerSec;
-      level = "Professional";
-      document.getElementById("level").innerHTML = level;
-    } else {
-      tapPerSec = 5;
-      document.getElementById("tapPerSec").innerHTML = tapPerSec;
-      level = "Master";
-      document.getElementById("level").innerHTML = level;
-    }
-    earnPerHour = earnPerHour - tapPerSec;
-    balance = balance + tapPerSec;
-    document.getElementById("tapBalance").innerHTML = balance;
-    document.getElementById("earnPerHour").innerHTML = earnPerHour;
+// Helper function to update DOM elements
+function updateDOM() {
+  tapBalanceElem.innerHTML = balance;
+  earnPerHourElem.innerHTML = earnPerHour;
+  tapPerSecElem.innerHTML = tapPerSec;
+  levelElem.innerHTML = level;
+  dailyClaimElem.innerHTML = dailyReward;
+}
+
+// Helper function to update level and tap per second
+function updateLevelAndTapPerSec() {
+  if (balance < BEGINNER_THRESHOLD) {
+    level = "Beginner";
+    tapPerSec = 1;
+  } else if (balance < AMATEUR_THRESHOLD) {
+    level = "Amateur";
+    tapPerSec = 2;
+  } else if (balance < PROFESSIONAL_THRESHOLD) {
+    level = "Professional";
+    tapPerSec = 3;
   } else {
+    level = "Master";
+    tapPerSec = MASTER_TAP_PER_SEC;
+  }
+}
+
+// Main tap function
+function tap() {
+  if (earnPerHour === 0) {
+    noTapElem.className = "noTap";
     return;
   }
+
+  if (earnPerHour > 0 || earnPerHour - tapPerSec >= 0) {
+    updateLevelAndTapPerSec();
+    earnPerHour -= tapPerSec;
+    balance += tapPerSec;
+    updateDOM();
+  }
+}
+
+function dailyClaim() {
+  balance += 200;
+  updateLevelAndTapPerSec();
+  dailyClaimElem.disabled = true;
+  dailyClaimElem.style.cursor = "not-allowed";
+
+  updateDOM();
 }

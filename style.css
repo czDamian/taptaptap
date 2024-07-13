@@ -9,6 +9,8 @@ body {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
+  min-height: 100vh;
+  border: 1px solid;
 }
 a {
   text-decoration: none;
@@ -98,6 +100,22 @@ a:active {
 }
 .level {
   opacity: 50%;
+}
+.combo {
+  padding: 10px 20px;
+  margin-top: 30px;
+}
+.daily-claim {
+  padding: 12px 24px;
+  background-color: #0f0c00;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.daily-claim:active {
+  background-color: #2e2501;
 }
 
 /* media screen for mobile responsiveness */
