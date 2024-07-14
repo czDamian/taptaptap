@@ -7,7 +7,6 @@ const tapBalanceElem = document.getElementById("tapBalance");
 const earnPerHourElem = document.getElementById("earnPerHour");
 const tapPerSecElem = document.getElementById("tapPerSec");
 const levelElem = document.getElementById("level");
-const noTapElem = document.getElementById("noTap");
 const dailyClaimElem = document.getElementById("dailyC");
 const newUserRewardElem = document.getElementById("newUser");
 
@@ -51,11 +50,6 @@ function updateLevelAndTapPerSec() {
 
 // Main tap function
 function tap() {
-  if (earnPerHour === 0) {
-    noTapElem.className = "noTap";
-    return;
-  }
-
   if (earnPerHour > 0 && earnPerHour - tapPerSec >= 0) {
     updateLevelAndTapPerSec();
     earnPerHour -= tapPerSec;
@@ -81,15 +75,13 @@ function newUserReward() {
   updateDOM();
 }
 
+const earnInterval = setInterval(increaseEarnPerHour, 2000);
+//increases the maximum you can earn by x amount every second and stop if max-balance limit is reached
 function increaseEarnPerHour() {
-  if (earnPerHour >= MAX_BALANCE) {
-    clearInterval(earnInterval);
-    console.log("limit reached. Continue tapping");
-    return;
-  } else {
-    earnPerHour += 5;
+  const addTime = 5;
+  if (earnPerHour <= MAX_BALANCE && earnPerHour + addTime <= MAX_BALANCE) {
+    setInterval(earnInterval, 1000);
+    earnPerHour += addTime;
     earnPerHourElem.innerHTML = earnPerHour;
   }
 }
-const earnInterval = setInterval(increaseEarnPerHour, 2000);
-//increases the maximum you can earn by x amount every second and stop if max-balance limit is reached
