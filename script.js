@@ -1,7 +1,7 @@
-const BEGINNER_THRESHOLD = 20;
-const AMATEUR_THRESHOLD = 80;
-const PROFESSIONAL_THRESHOLD = 250;
-const MASTER_TAP_PER_SEC = 5;
+const BEGINNER_THRESHOLD = 100;
+const AMATEUR_THRESHOLD = 200;
+const PROFESSIONAL_THRESHOLD = 500;
+const MAX_BALANCE = 300;
 
 const tapBalanceElem = document.getElementById("tapBalance");
 const earnPerHourElem = document.getElementById("earnPerHour");
@@ -9,6 +9,7 @@ const tapPerSecElem = document.getElementById("tapPerSec");
 const levelElem = document.getElementById("level");
 const noTapElem = document.getElementById("noTap");
 const dailyClaimElem = document.getElementById("dailyC");
+const newUserRewardElem = document.getElementById("newUser");
 
 // Initial values
 let balance = parseFloat(tapBalanceElem.innerHTML);
@@ -16,6 +17,7 @@ let earnPerHour = parseFloat(earnPerHourElem.innerHTML);
 let tapPerSec = 1;
 let level = levelElem.innerHTML;
 let dailyReward = dailyClaimElem.innerHTML;
+let newUserR = newUserRewardElem.innerHTML;
 
 // Set initial tap per second value
 tapPerSecElem.innerHTML = tapPerSec;
@@ -27,6 +29,7 @@ function updateDOM() {
   tapPerSecElem.innerHTML = tapPerSec;
   levelElem.innerHTML = level;
   dailyClaimElem.innerHTML = dailyReward;
+  newUserRewardElem.innerHTML = newUserR;
 }
 
 // Helper function to update level and tap per second
@@ -42,7 +45,7 @@ function updateLevelAndTapPerSec() {
     tapPerSec = 3;
   } else {
     level = "Master";
-    tapPerSec = MASTER_TAP_PER_SEC;
+    tapPerSec = 5;
   }
 }
 
@@ -53,7 +56,7 @@ function tap() {
     return;
   }
 
-  if (earnPerHour > 0 || earnPerHour - tapPerSec >= 0) {
+  if (earnPerHour > 0 && earnPerHour - tapPerSec >= 0) {
     updateLevelAndTapPerSec();
     earnPerHour -= tapPerSec;
     balance += tapPerSec;
@@ -69,3 +72,24 @@ function dailyClaim() {
 
   updateDOM();
 }
+function newUserReward() {
+  balance += 1000;
+  updateLevelAndTapPerSec();
+  newUserRewardElem.disabled = true;
+  newUserRewardElem.style.cursor = "not-allowed";
+
+  updateDOM();
+}
+
+function increaseEarnPerHour() {
+  if (earnPerHour >= MAX_BALANCE) {
+    clearInterval(earnInterval);
+    console.log("limit reached. Continue tapping");
+    return;
+  } else {
+    earnPerHour += 5;
+    earnPerHourElem.innerHTML = earnPerHour;
+  }
+}
+const earnInterval = setInterval(increaseEarnPerHour, 2000);
+//increases the maximum you can earn by x amount every second and stop if max-balance limit is reached
