@@ -1,6 +1,9 @@
 const BEGINNER_THRESHOLD = 100;
 const AMATEUR_THRESHOLD = 200;
 const PROFESSIONAL_THRESHOLD = 500;
+const MASTER_TRESHOLD = 1000;
+const LEGEND_TRESHOLD = 2500;
+const SUPREME_MASTER_TRESHOLD = 5000;
 const MAX_BALANCE = 300;
 
 const tapBalanceElem = document.getElementById("tapBalance");
@@ -42,9 +45,18 @@ function updateLevelAndTapPerSec() {
   } else if (balance < PROFESSIONAL_THRESHOLD) {
     level = "4/10 Professional";
     tapPerSec = 3;
-  } else {
+  } else if (balance < MASTER_TRESHOLD) {
     level = "5/10 Master";
+    tapPerSec = 4;
+  } else if (balance < LEGEND_TRESHOLD) {
+    level = "6/10 Legend";
     tapPerSec = 5;
+  } else if (balance < SUPREME_MASTER_TRESHOLD) {
+    level = "7/10 Supreme";
+    tapPerSec = 6;
+  } else {
+    level = "8/10 King";
+    tapPerSec = 10;
   }
 }
 
