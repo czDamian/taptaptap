@@ -13,8 +13,6 @@ body {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  min-height: 100vh;
-  border: 1px solid;
 }
 a {
   text-decoration: none;
@@ -28,7 +26,7 @@ a:active {
 }
 /* custom styles */
 .tap {
-  border-radius: 1000px;
+  border-radius: 100%;
   cursor: pointer;
   margin: 50px auto;
   text-align: center;
@@ -38,10 +36,11 @@ a:active {
   outline: none;
   text-transform: uppercase;
   font: inherit;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
+  font-weight: bold;
+  padding: 10px;
   color: #002327;
-  /* font-size: 18px; */
   font-weight: bold;
   background-color: #fcdc73;
   border: 1px solid #fcdc73;
@@ -109,6 +108,8 @@ a:active {
     height: 200px;
     width: 200px;
     font-size: 24px;
+    padding: 10px;
+    font-weight: bold;
   }
   body {
     font-size: 16px;

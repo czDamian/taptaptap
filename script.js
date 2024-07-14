@@ -34,16 +34,16 @@ function updateDOM() {
 // Helper function to update level and tap per second
 function updateLevelAndTapPerSec() {
   if (balance < BEGINNER_THRESHOLD) {
-    level = "Beginner";
+    level = "2/10 Beginner";
     tapPerSec = 1;
   } else if (balance < AMATEUR_THRESHOLD) {
-    level = "Amateur";
+    level = "3/10 Amateur";
     tapPerSec = 2;
   } else if (balance < PROFESSIONAL_THRESHOLD) {
-    level = "Professional";
+    level = "4/10 Professional";
     tapPerSec = 3;
   } else {
-    level = "Master";
+    level = "5/10 Master";
     tapPerSec = 5;
   }
 }
