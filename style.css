@@ -2,6 +2,10 @@
   font-family: "Montserrat";
   src: url(Montserrat.ttf);
 }
+html {
+  background-image: linear-gradient(to top right, #036474, #012a46);
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -11,7 +15,8 @@ body {
   background-color: #002327;
   color: white;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
+  min-height: 100vh;
   margin: 0 auto;
 }
 a {
@@ -55,14 +60,18 @@ a:active {
 .flexRow {
   display: flex;
   justify-content: space-between;
-  padding: 12px 20px;
+  align-items: center;
   flex-wrap: wrap;
   gap: 8px;
 }
-
+.logo {
+  border-radius: 100%;
+}
 .flexCol {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 0 20px;
+  gap: 12px;
 }
 
 .gold {
@@ -70,7 +79,8 @@ a:active {
 }
 
 .shadow {
-  box-shadow: 1px 1px 8px;
+  padding: 20px;
+  background-color: #02171a;
   margin-bottom: 20px;
 }
 .center {
@@ -88,7 +98,8 @@ a:active {
   margin-top: 30px;
 }
 .daily-claim {
-  padding: 0 30px;
+  width: 80px;
+  padding: 12px;
   background-color: #0f0c00;
   color: #ffffff;
   border: none;
@@ -99,6 +110,9 @@ a:active {
 }
 .daily-claim:active {
   background-color: #2e2501;
+}
+.main {
+  padding: 0 10px;
 }
 
 /* media screen for mobile responsiveness */
@@ -112,6 +126,6 @@ a:active {
     font-weight: bold;
   }
   body {
-    font-size: 16px;
+    font-size: 14x;
   }
 }

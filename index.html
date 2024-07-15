@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="coin.jpg" type="image/x-icon" />
-    <title>TapTapTap</title>
+    <link rel="shortcut icon" href="cat4.jpg" type="image/x-icon" />
+    <title>Cat Swap</title>
     <base target="_blank" />
   </head>
   <body>
     <header class="flexRow shadow">
-      <div>
-        <a href="https://wa.me/2348060864466">TapTapTap</a>
+      <div class="flexRow">
+        <img src="cat1.jpg" alt="CatSwap" width="32" class="logo" />
+        <a href="https://wa.me/2348060864466">Cat Swap</a>
       </div>
       <div>
         <a href="https://wa.me/2348060864466" title="chat Damian on whatsapp"
@@ -28,7 +29,7 @@
         <p id="level" class="level">1/10 Novice</p>
       </div>
     </div>
-    <div>
+    <div class="flexCol">
       <button class="tap" id="noTap" onclick="tap()">start mining</button>
       <div class="flexRow">
         <div>
@@ -45,15 +46,15 @@
         <div class="flexRow">
           <p>Daily Reward</p>
           <button class="daily-claim" id="dailyC" onclick="dailyClaim()">
-            Claim
+            + 200
           </button>
         </div>
-        <div class="flexRow">
-          <p>New user Reward</p>
-          <button class="daily-claim" id="newUser" onclick="newUserReward()">
-            Claim
-          </button>
-        </div>
+      </div>
+      <div class="flexRow">
+        <p>New user Reward</p>
+        <button class="daily-claim" id="newUser" onclick="newUserReward()">
+          + 1000
+        </button>
       </div>
     </div>
   </body>

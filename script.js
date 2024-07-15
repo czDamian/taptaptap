@@ -73,9 +73,9 @@ function tap() {
 function dailyClaim() {
   balance += 200;
   updateLevelAndTapPerSec();
+  dailyClaimElem.textContent = "Claimed";
   dailyClaimElem.disabled = true;
   dailyClaimElem.style.cursor = "not-allowed";
-
   updateDOM();
 }
 function newUserReward() {
@@ -83,7 +83,6 @@ function newUserReward() {
   updateLevelAndTapPerSec();
   newUserRewardElem.disabled = true;
   newUserRewardElem.style.cursor = "not-allowed";
-
   updateDOM();
 }
 
