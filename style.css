@@ -111,8 +111,11 @@ a:active {
 .daily-claim:active {
   background-color: #2e2501;
 }
-.main {
-  padding: 0 10px;
+.disabled {
+  cursor: not-allowed;
+}
+.disabled:active {
+  background-color: #0f0c00;
 }
 
 /* media screen for mobile responsiveness */
