@@ -11,7 +11,7 @@
     <header class="flexRow shadow">
       <div class="flexRow">
         <img src="cat1.jpg" alt="CatSwap" width="32" class="logo" />
-        <a href="/">Cat Swap</a>
+        <a href="">Cat Swap</a>
       </div>
       <div>
         <a href="https://wa.me/2348060864466" title="chat Damian on whatsapp"
@@ -33,9 +33,30 @@
         <img src="cat1.jpg" alt="catSwap" class="tap bigImg" />
       </button>
       <div class="flexRow home">
-        <button class="daily-claim">Create Account</button
-        ><button onclick="startMining()" class="daily-claim">Sign In</button>
+        <button onclick="openForm()" class="daily-claim">Create Account</button>
+        <button onclick="startMining()" class="daily-claim">Sign In</button>
         <p class="small">Create account or sign in to start mining</p>
+
+        <!-- pop up to create account -->
+        <form
+          method="post"
+          action=""
+          onsubmit="submitForm(event)"
+          class="createAcc"
+          id="openForm">
+          <img src="cat1.jpg" class="tap smallImg" alt="logo" />
+          <input type="text" name="username" placeholder="Username" />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password" />
+          <div class="flexCancel">
+            <input id="submit" type="submit" value="Sign Up" />
+            <button onclick="cancelSignUp(event)" id="cancel">Cancel</button>
+          </div>
+        </form>
+        <!--end of pop up to create account -->
       </div>
       <div class="special">
         over <span class="gold" id="special">81</span> coins mined today
@@ -46,5 +67,5 @@
       <a href="https://wa.me/2348060864466" title="contact Damian "> Damian </a>
     </footer>
   </body>
-  <script src="script.js"></script>
+  <script src="indexScript.js"></script>
 </html>
