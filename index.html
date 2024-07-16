@@ -6,13 +6,12 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="cat4.jpg" type="image/x-icon" />
     <title>Cat Swap</title>
-    <base target="_blank" />
   </head>
   <body>
     <header class="flexRow shadow">
       <div class="flexRow">
         <img src="cat1.jpg" alt="CatSwap" width="32" class="logo" />
-        <a href="https://wa.me/2348060864466">Cat Swap</a>
+        <a href="/">Cat Swap</a>
       </div>
       <div>
         <a href="https://wa.me/2348060864466" title="chat Damian on whatsapp"
@@ -23,46 +22,29 @@
     <div class=" ">
       <div class="center">
         <div class="large">
-          <span id="tapBalance" class="gold">0</span>
-          <span>coins</span>
+          <span class="block">Welcome To</span>
+          <span class="gold">CatSwap</span>
+          <span class="small">...make money by simply tapping your screen</span>
         </div>
-        <p id="level" class="level">1/10 Novice</p>
       </div>
     </div>
     <div class="flexCol">
-      <button class="tap" id="noTap" onclick="tap()">
-        <img src="cat2.jpg" alt="mine" class="tap" />
+      <button class="tap bigImg">
+        <img src="cat1.jpg" alt="catSwap" class="tap bigImg" />
       </button>
-      <div class="flexRow">
-        <div>
-          <span id="earnPerHour" class="gold">200</span> <span>/</span>
-          <span class="gold">300</span>
-          <span>coins left to mine</span>
-        </div>
-        <div>
-          <span>Tap per sec</span>
-          <span id="tapPerSec" class="gold"></span> <span>⏲</span>
-        </div>
+      <div class="flexRow home">
+        <button class="daily-claim">Create Account</button
+        ><button onclick="startMining()" class="daily-claim">Sign In</button>
+        <p class="small">Create account or sign in to start mining</p>
       </div>
-      <div class="combo">
-        <div class="flexRow">
-          <p>Daily Reward</p>
-          <button class="daily-claim" id="dailyC" onclick="dailyClaim()">
-            + 200
-          </button>
-        </div>
-      </div>
-      <div class="flexRow">
-        <p>New user Reward</p>
-        <button class="daily-claim" id="newUser" onclick="newUserReward()">
-          + 1000
-        </button>
-      </div>
-      <div class="flexRow">
-        <p>Auto Tap Bot</p>
-        <button class="daily-claim disabled">soon...</button>
+      <div class="special">
+        over <span class="gold" id="special">81</span> coins mined today
       </div>
     </div>
+    <footer>
+      © 2024. Designed and crafted by
+      <a href="https://wa.me/2348060864466" title="contact Damian "> Damian </a>
+    </footer>
   </body>
   <script src="script.js"></script>
 </html>
