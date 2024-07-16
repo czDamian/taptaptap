@@ -175,8 +175,7 @@ footer {
 
 .createAcc {
   width: 310px;
-  /* min-height: 100%; */
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 16px;
   padding: 40px 20px;
